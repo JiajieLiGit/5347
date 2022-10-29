@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/loginstyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/checkInput.js"></script>
+</head>
+<body>
+    <% if (prompt == true) { %>
+        <script>alert("Password Incorrect!")</script>
+    <% }  %>
+
+    <% if (userPrompt == true) { %>
+        <script>alert("Username not exist!")</script>
+    <% }  %>
+    
+    <div class="container">
+        <div class="wrapper">
+            <div class="form-signin">
+                <form action="/login" method="POST" name="Login_Form">
+                    <h3 class="form-signin-heading">Welcome! Please Sign In</h3>
+                    
+                    <input type="text" class="form-control" name="email" value = "<%= email %>" placeholder="Email Address" maxlength="35"/>
+                    <input type="password" class="form-control" name="password" placeholder="Password"  onclick="checkEmail()"/>
+                    <p class = "reset">forget your password?  <button name="Reset" value="Reset" type="Submit">reset here</button></p>
+                    <button class="btn btn-lg btn-primary btn-block" name="Login" value="Login" type="Submit">LOGIN</button>
+                    <h3 class="form-signin-br"></h3>
+                    
+                </form>
+                <form action="/signup" method="get" name="Signup_Form">
+                    <button class="btn btn-lg btn-primary btn-block" name="SignUp" value="SignUp" type="Submit">SIGN UP</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

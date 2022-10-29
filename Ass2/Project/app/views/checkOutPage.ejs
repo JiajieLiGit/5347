@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Check Out</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/checkoutstyle.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/checkout.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            
+            <form action="/checkout" method="post" name="reset_Form" class="form-reset">
+                <button type="button" class="back"><a href="/checkout/back">Back</a></button>
+                <h3 class="form-reset-heading">Shopping Cart</h3>
+                <div id="listBox">
+                    <table>
+                       <caption>
+                          <br />
+                       </caption>
+                       <thead>
+                          <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th></th>
+                          </tr>
+                       </thead>
+           
+                       <tbody id="tbody">
+                            <% for(let i = 0; i<itemsInCart.length; i++) {%>
+                                <tr>
+                                    <td><img class="phoneImg" src="/phone_default_images/<%= itemsInCart[i][2] %>.jpeg" alt="phoneImg"></td>
+                                    <td><%= itemsInCart[i][0] %></td>
+                                    <td>
+                                        <input name = "title" type="hidden" value = "<%= itemsInCart[i][0] %>">
+                                        <button type="button" class = "insc" onclick="insc('<%= itemsInCart[i][0] %>', '<%= itemsInCart[i][3] %>')">+</button>
+                                        <input name = "amount" type="text" class ="count" id = "<%= itemsInCart[i][0] %>"  oninput="onChangeHandler('<%= itemsInCart[i][0] %>', '<%= itemsInCart[i][3] %>')" value = "<%= itemsInCart[i][1] %>">
+                                        <button type="button"  class = "dec"  onclick="dec('<%= itemsInCart[i][0] %>', '<%= itemsInCart[i][3] %>')">-</button>
+                                    </td>
+                                    <td>$<%= itemsInCart[i][3] * itemsInCart[i][1] %></td>
+                                    <td><button type="button" onclick="removeItem('<%= itemsInCart[i][0] %>')"><img class = "remove" src="/phone_default_images/remove.jpeg" ></button></td>
+                                </tr>
+                            <% } %>
+
+                            <!-- <tr>
+                                <td><img class="phoneImg" src="/phone_default_images/Apple.jpeg" alt="phoneImg"></td>
+                                <td>Apple iPhone 3GS A1303 16GB GSM Unlocked SmartPhone - Black</td>
+                                <td>
+                                    <button type="button"  class = "insc" onclick="insc()">+</button>
+							        <input type="text"  class ="count" value = "0">
+							        <button type="button"  class = "dec" onclick="dec()">-</button>
+                                </td>
+                                <td>$100</td>
+                                <td><button type="button"><img class = "remove" src="/phone_default_images/remove.jpeg" ></button></td>
+                            </tr> -->
+                       </tbody>
+           
+                    </table>
+                </div> 
+                <div id = "checkoutDiv">  
+                    <p id = "totalPrice"></p>
+                    <button class="btn btn-lg btn-primary btn-block" id = "checkout" name="checkout" value="checkout" type="Submit">CHECK OUT</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

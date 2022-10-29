@@ -1,0 +1,87 @@
+.contentBox {
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: whitesmoke;
+    margin-top: 1%;
+    border-radius: 15px;
+    padding-top: 10px;
+}
+.contentBox::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.imgArea {
+    box-sizing: border-box;
+    float: left;
+    margin: 1%;
+    height: 55%;
+
+
+}
+.phoneDetailsArea {
+    box-sizing: border-box;
+    float: left;
+    
+    margin: 1%;
+    margin-right: 2%;
+    height: 55%;
+    width: 55%;
+}
+.reviewArea {
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    border-top: 1px solid gray;
+    margin: 1%;
+    width: 95%;
+}
+.oneReviewRow{
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+#commentArea {
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    margin-top: 2%;
+}
+.starImg {
+    width:1em ;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 50; 
+    padding-top: 180px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+    
+}
+/*Modal Content */
+.modal-content {
+    background-color: whitesmoke ;
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+/*modal close*/
+.close {
+    color: #4e4949;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*modal close pseudo class*/
+.close:hover,
+.close:focus {
+    color:#f50404;
+    text-decoration: none;
+    cursor: pointer;
+}

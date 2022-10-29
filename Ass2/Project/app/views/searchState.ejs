@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/searchPage.css">
+    <script src="/js/searchPageJs.js"></script>
+
+    <title>SellPhone</title>
+    <style>
+
+    </style>
+</head>
+<body>  
+    <% for(let i = 0; i<searchResult.length; i++) {%>
+        <div class="oneResultRow">
+            <img id="phoneImg" src="/phone_default_images/<%= searchResult[i].brand %>.jpeg" alt="phoneImg">
+            <div id="titleAreaId"><p><b>Title:</b> </span>  <span id="phoneTitle"><%= searchResult[i].title %></span></p></div><br>
+            <div id="priceArea"><p><b>Price:</b>  <span>$<%= searchResult[i].price %></span></p>  </div>
+            <div id="phoneIdArea"><%= searchResult[i]._id %></div>
+            
+        </div>
+    <% } %>
+
+</body>
+</html>

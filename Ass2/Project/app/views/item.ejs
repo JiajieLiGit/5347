@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/itemPage.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="/js/itemPageJs.js"></script>
+    <title>Item</title>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <div id="reloadTopBarAreaId"></div>
+    <div class="contentBox">
+        <p id="phoneId" style="display: none;"><%= searchResult[0]._id %></p>
+        <h2><p id="titleArea"><%= searchResult[0].title %></p></h2>
+        <div class="imgArea">
+            <img src="/phone_default_images/<%= searchResult[0].brand %>.jpeg"" alt="phoneImg">
+        </div>
+        <div class="phoneDetailsArea">
+            <p>Brand: <span id="brandId"><%= searchResult[0].brand %></span></p>
+            <p>Stock: <span id="stockId"><%= searchResult[0].stock %></span></p>
+            <p>Seller: <span><%= searchResult[0].seller.firstname %> <% " " %> <%= searchResult[0].seller.lastname %></span> </p>
+            <p>Price: $<span id="priceId"><%= searchResult[0].price %></span></p>
+            <p>Cart: ( <span id="buy_number"><%= numberInCart %></span> )</p>
+            <button class="btn btn-primary btn-sm" id="addToCartBntId">Add to cart</button>
+
+            <div id="commentArea">
+                <h4><b>You can submit your comment here!</b> </h4>
+                <p>Rating:<% for(let i = 0; i < 5; i++) {%>
+                <img class="starImg" src="/phone_default_images/star.png" alt=""  value = <%= i %> >
+                <% } %>
+                </p>
+                <textarea name="" id="yourCommentId" cols="38" rows="6"></textarea><br><br>
+                <button class="btn btn-primary btn-sm" id="addCommentBntId">Add comment</button>
+            </div>
+        </div>
+
+        <div class="reviewArea">
+            <h2>Review:</h2>
+            <% if(searchResult[0].reviews.length > 3) {%>
+                <button id="moreThreeComments">More Three</button>
+               
+                <% for(let i = 0; i<searchResult[0].reviews.length; i++) {%>
+                    
+                    <div class="oneReviewRow">
+                        <p>Reviewer: <span><%= searchResult[0].reviews[i].reviewer.firstname %> <% " " %> <%= searchResult[0].reviews[i].reviewer.lastname %></span></p>
+                        <p>Rating: <span><%= searchResult[0].reviews[i].rating %></span></p>
+                        
+                        <p id="shortCommentId">Comment: <span><%= searchResult[0].reviews[i].comment.substr(0,200) %></span></p>
+                        <p id="fullCommentId" style="display: none;">Comment: <span><%= searchResult[0].reviews[i].comment %></span></p>
+                        <% if(searchResult[0].reviews[i].comment.length > 200) {%>
+                            <button class="showFullComment">Display full comment</button>
+                        <%}%>
+                        
+                    </div>
+                <%}%>
+            <%} else {%>
+                <% for(let i = 0; i<searchResult[0].reviews.length; i++) {%>
+                    <div class="oneReviewRow">
+                        <p>Reviewer: <span><%= searchResult[0].reviews[i].reviewer.firstname %> <% " " %> <%= searchResult[0].reviews[i].reviewer.lastname %></span></p>
+                        <p>Rating: <span><%= searchResult[0].reviews[i].rating %></span></p>
+                        
+                        <p id="shortCommentId">Comment: <span><%= searchResult[0].reviews[i].comment.substr(0,200) %></span></p>
+                        <p id="fullCommentId" style="display: none;">Comment: <span><%= searchResult[0].reviews[i].comment %></span></p>
+                        <% if(searchResult[0].reviews[i].comment.length > 200) {%>
+                            <button class="showFullComment">Display full comment</button>
+                        <%}%>
+                        
+                    </div>
+                <%}%>
+            <%}%>
+            
+
+            
+        </div>
+
+    
+        
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+           <div class="modal-header">
+              <span class="close" >&times;</span>
+              <h1> How many you want to buy?</h1>
+           </div>
+           <div class="modal-body" id="modalBody">
+              Quantity: <input type="number" id="buyNumberInput" min="0" style="width: 30%" >
+           <div class="modal-footer">
+                <button type="button"  id="modalCloseId">
+                    Close
+                </button>
+                <button type="button"  id="modalConfirmId">
+                    Confirm
+                </button>
+           </div>
+        </div>
+     </div>
+</body>
+
+
+</html>

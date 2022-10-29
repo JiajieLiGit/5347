@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="/js/userPage.js"></script>
+    <link rel="stylesheet" href="/css/userpage.css">
+
+</head>
+
+<body>
+    <div id="userId" style="display: none ;"><%= userAllDetails[0]._id%></div>
+    
+    <div id="passwordId" style="display: none ;"><%= userAllDetails[0].password%></div>
+    <div id="statusId" style="display: none ;"><%= status%></div>
+    
+    <button id="showProfileId">Profile</button>
+    <button id="changePasswordId">Change password</button>
+    <button id="showPhoneListId">PhoneList</button>
+    <button id="showCommentId">Comment</button>
+    <p id="outer">
+        <button >
+            <a href="http://localhost:3000">Main</a></button>
+        <button>
+            <a href="/logout">Sign-out</a>
+        </button>
+    </p>
+    <div id="Editprofile">
+        <h1>Editprofile</h1>
+        <div id="editprofile">
+            <label>firstname</label>
+
+            <input class="inputArea" id="firstname" type="text" name="first name" disabled="disabled"
+                value="<%= userAllDetails[0].firstname %>" /></div>
+       
+        <div>
+            <label>lastname</label>
+
+            <input class="inputArea" id="lastname" type="text" name="last name" disabled="disabled"
+                value="<%= userAllDetails[0].lastname %>" />
+        </div>
+        <div>
+            <label>email</label>
+
+            <input class="inputArea" id="email" type="text" name="email" disabled="disabled"
+                value="<%= userAllDetails[0].email %>" />
+        </div>
+        <button id="editprofileBnt">Unlock profile</button>
+        <button id="updateProfileBnt" style="display:none;">Update profile</button>
+    </div>
+
+    <div  vertical-align="middle" id="changePassword">
+        <div>
+            <label>Current password</label>
+            <input id="currentPassword" type="text" name="last name" />
+        </div>
+        <div>
+            <label>New password</label>
+            <input id="newPassword" type="text" name="last name" />
+        </div>
+        <div>
+            <button id="passWordConfirm"> Confirm </button>
+        </div>
+    </div>
+
+    <div id="phoneList">
+
+        <h1>phoneList</h1>
+        <% for(let i=0; i < myPhoneList.length; i++) {%>
+            <div id="onePhoneRaw">
+                <strong id="titleArea">Title:<%= myPhoneList[i].title %>
+                </strong>
+                <div class="imgArea">
+                    <img src="/phone_default_images/<%= myPhoneList[i].brand %>.jpeg"" alt=" phoneImg">
+                </div>
+                <div class="phoneDetailsArea">
+                    <p>Brand: <span id="brandId"><%= myPhoneList[i].brand %></span></p>
+                    <p>Stock: <span id="stockId"><%= myPhoneList[i].stock %></span></p>
+                    <p>Price: $<span id="priceId"><%= myPhoneList[i].price %></span></p>
+                    <p id="phoneId" style="display:none ;"><%= myPhoneList[i]._id %></p>
+                    <% if(myPhoneList[i].disabled !=null){ %>
+                        <button id="enabled"> enabled </button>
+                    <% }else{ %>
+                        <button id="disabled"> disabled </button>
+                    <% } %>
+
+                    <button class="delete"> delete</button>
+                </div>
+            </div>
+            <% } %>
+                <div id="addnewphone">
+                    <div>
+                        <label for="title">Title</label>
+                        <input type="text" id="titleInput" name="title">
+                    </div>
+                    <div>
+                        <label>stock</label>
+                        <input id="stock" type="number" step="1" min="0" style="width:100px;">
+                    </div>
+                    <div>
+                        <label>price</label>
+                        <input id="price" type="number" step="0.1" min="0" style="width:100px;">
+                    </div>
+                    <label>brand</label>
+                    <select id="brand">
+                        <option>HTC</option>
+                        <option>Apple</option>
+                        <option>Sony</option>
+                        <option>Huawei</option>
+                        <option>Motorola</option>
+                        <option>LG</option>
+                        <option>Nokia</option>
+                        <option>Samsung</option>
+                    </select>
+                    <div>
+                        <label>disabled</label>
+                        <input id="disabled" type="checkbox" Loy-filter="disabled-Lay-skin=-switch">
+                    </div>
+                    <button id="addNewPhone"> Add new phone</button>
+                </div>
+    </div>
+
+
+
+    <div  id="comment">
+        <h1>comment</h1>
+
+        <% for(let i=0; i < myPhoneList.length; i++) {%>
+
+            <% for(let j=0; j<myPhoneList[i].reviews.length ; j++){%>
+                <div id="oneCommentRaw">
+                    <div class="commentDetailsArea">
+                        <p id="phoneId" style="display:none ;"><%= myPhoneList[i]._id %></p>
+                    </div>
+                    <strong id="titleArea"><%= myPhoneList[i].title %></strong>
+                    <div class="imgArea">
+                        <img src="/phone_default_images/<%= myPhoneList[i].brand %>.jpeg"" alt=" phoneImg">
+                    </div>
+                    <p id="phonecomment"><%= myPhoneList[i].reviews[j].comment %></p>
+                </div>
+                <%}%>
+          <% } %>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h1> Input your password here!</h1>
+            </div>
+            <div class="modal-body" id="modalBody">
+                Password: <input type="text" id="passwordInput" min="0" style="width: 30%">
+                <div class="modal-footer">
+                    <button type="button" id="modalCloseId">
+                        Close
+                    </button>
+                    <button type="button" id="modalConfirmId">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+</body>
+</body>
+
+</html>

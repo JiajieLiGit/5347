@@ -1,0 +1,105 @@
+body {
+    background-image: url(/phone_default_images/bg.jpg);
+}
+.topBar {
+   
+    height: 200px;
+    padding: 2%;
+    background-color:gray;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.topBar::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.midBox {
+  
+    height: 35%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.midBox::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+.bottomBox {
+   
+    height: 35%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.bottomBox::after{
+    content: "";
+    display: table;
+    clear: both;
+    
+}
+.topBarLogeImg {
+    box-sizing: border-box;
+    
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.topBarSearchArea{
+    box-sizing: border-box;
+    
+    padding-top: 25px;
+   
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding-left: 9%;
+}
+
+.topBarRightArea{
+    text-align: right;
+    box-sizing: border-box;
+    
+    width: 29%;
+    height: 100%;
+    float: left;
+}
+.displayBox {
+    
+    box-sizing: border-box;
+    width: 20%;
+    height: 70%;
+    float:left
+}
+#brandSelectId{
+    width:  10em;
+    height: 2.3em;
+}
+#rangeId {
+    margin-left: 10px;
+    width: 50%;
+    height: 50px;
+    float: left;
+}
+button {
+    border-radius: 7px;
+    border: 0.5px solid black;
+    background-color: powderblue;
+
+}
+.phoneIdArea{
+    display: none;
+}
+#filter {
+    display: none;
+}
+#rangerId{
+    font-size: small;height: 50px; padding-top: 17px;
+}
+#priceAreaId {
+    width: 50%; font-size: 1em; float: right;
+}

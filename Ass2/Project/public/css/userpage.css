@@ -1,0 +1,121 @@
+#Editprofile {
+    border: 1px solid rgb(247, 206, 206);
+    margin: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+}
+
+#changePassword {
+    display: none;
+    border: 1px solid rgb(61, 141, 247);
+    margin: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+}
+
+#phoneList {
+    display: none;
+    border: 1px solid rgb(1, 1, 82);
+    margin: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+}
+
+#comment {
+    display: none;
+    border: 1px solid rgb(136, 0, 136);
+    margin: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    padding-top: 180px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+/*Modal Content */
+.modal-content {
+    background-color: rgb(61, 123, 231);
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+/*modal close*/
+.close {
+    color: #4e4949;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*modal close pseudo class*/
+.close:hover,
+.close:focus {
+    color: #f50404;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#onePhoneRaw {
+    border: 1px solid rgb(85, 30, 251);
+    border-radius: 10px;
+}
+
+#addnewphone {
+    border: 1px solid rgb(85, 30, 251);
+    border-radius: 10px;
+}
+
+label {
+    width: 80px;
+    text-align: right;
+    display: inline-block;
+}
+
+div {
+    margin: 0.25em auto;
+    background-color: #d7eeff;
+    padding: 1em;
+    width: 80%;
+}
+
+body {
+    font-family: "Lucida Sans", Verdana, Arial, sans-serif;
+
+    background-color: #4cb1ff;
+    background-image: url(/phone_default_images/backpicture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#outer{
+    float: right;
+}
+#comment,#changePassword,#phoneList,#Editprofile{
+    margin:0 auto;
+    text-align: center;
+   border-radius: 10px;
+    
+}
+#Editprofile,#changePassword{
+    transform:translate(0,30%);
+    border-radius: 10px;
+}
+#oneCommentRaw{
+    border: 1px solid rgb(85, 30, 251);
+    border-radius: 10px;
+}

@@ -1,0 +1,42 @@
+.oneResultRow {
+    box-sizing: border-box;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    width: 80%;
+    height: 25%;
+
+    padding: 2px;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+.oneResultRow::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.oneResultRow:hover {
+    border-color: white;
+    -webkit-box-shadow: 0 0 8px rgb(50, 156, 205);
+    box-shadow:  0 0 8px yellowgreen;
+}
+#phoneImg{
+    height: 80%;
+    display: block;
+    float: left;
+}
+#titleAreaId {
+    float: left;
+    width: 85%;
+    height: 10%;
+}
+#priceArea {
+    width: 30%;
+}
+#phoneIdArea {
+    display: none;
+}

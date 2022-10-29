@@ -1,0 +1,195 @@
+/**
+* Referenced by https://www.siphor.com/express-js-login-page-example/
+ */
+
+ body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: whitesmoke;
+  }
+
+  p {
+    padding: 2px;
+    font: 14px bold;
+  }
+  
+  .wrapper {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  .reset {
+    margin-bottom: 25px;
+    text-align: right;
+  }
+
+  .message {
+    margin-bottom: 0;
+  }
+
+  button{
+        border:0;
+        outline:none;
+        background-color: transparent;
+        color: #00B7FF;
+    }
+  
+  .form-reset {
+    max-width: 860px;
+    padding: 30px 38px 20px;
+    margin: 0 auto;
+    background-color: #eee;
+    border: 3px dotted rgba(0,0,0,0.1);
+  }
+  
+  .form-reset-heading {
+    text-align:center;
+    margin-bottom: 30px;
+  }
+
+  .form-reset-br {
+    text-align:center;
+    margin-top: 20px;
+  }
+  
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+  }
+  
+
+  #listBox { 
+    margin-top: 1em; 
+    background-color: #FAFCFF;
+ }
+ 
+ table {
+   border: collapse; 
+   border-spacing: 0;
+ }
+ 
+ table tbody td{
+    border-top: 1pt solid #95BEF0;   
+    line-height: 1.5em;
+    vertical-align: middle;
+    padding: 0.5em 0.75em;
+ }
+ 
+ table thead th {
+    text-align: left;
+    padding: 0.25em 0.75em; 
+ }
+ 
+ table thead {
+    background-color: #EBF4FB ;
+ }
+ 
+ table tbody td:first-child  {
+    text-align: center;
+    padding: 0.5em 0em;   
+ }
+
+ /* tbody {
+   display:block;
+   width: calc(100% + 8px); 
+   height: 300px;
+   width:100%;
+   table-layout:fixed;
+   overflow-y: auto;
+ } */
+
+ 
+ .back {
+    background-color: grey;
+    color: black;
+    border-radius:6px;
+    width: 4em;
+    height: 1.5em;
+ }
+
+
+
+ td:nth-child(3) {
+    align-items: center;
+ }
+
+ .insc, .dec {
+    width: 1.8em;
+    height: 1.8em;
+    /* height: 0.6rem; */
+    /* text-align: center; */
+    background-color: grey;
+    color: white;
+    vertical-align: middle;
+    border-radius:6px;
+    padding-left: 4%;
+    padding-top: 2%;
+ }
+
+ .dec {
+    padding-bottom: 10%;
+ }
+ 
+.count {
+    width:25%;
+}
+
+.remove {
+    width: 1em;
+    height: 1em;
+}
+
+ td:nth-child(4), th:nth-child(4){
+    width: 20%;
+    align-items:center;
+ }
+ 
+ td:nth-child(1), th:nth-child(1){
+    width: 20%;
+ }
+ 
+ td:nth-child(2), th:nth-child(2){
+    width: 50%;
+ }
+
+ td:nth-child(3), th:nth-child(3){
+   width: 20%;
+}
+ 
+ td:nth-child(3) {
+    font-style: italic; 
+ }
+ 
+ 
+ caption {
+    background-color: #95BEF0;
+    padding: 0.5em 0.5em; 
+    font-weight: bold;
+    font-size: 1.2em;
+ }
+
+ .phoneImg{width:150px;height:150px}
+
+ #checkout {
+    width:140px;
+    margin-left: 640px;
+    margin-top: 15px;
+    padding-top: 2%;
+ }
+
+ #totalPrice {
+     float: left;
+     margin-top: 23px;
+     font-size: 150%;
+ }
+
+ #checkoutDiv {
+    margin-top: 30px;
+    border-top:1px solid #F00;
+    
+ }
